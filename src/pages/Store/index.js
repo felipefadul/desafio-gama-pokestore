@@ -3,13 +3,13 @@ import React from 'react';
 import * as S from './styled';
 import GlobalStyle from '../../styles/global';
 import Catalog from '../../components/Catalog';
-import Menu from '../../components/Menu';
+import Header from '../../components/Header';
 
 export default function Store() {
   
   return (
     <>
-      <Menu/>
+      <Header/>
       <S.StoreContainer>
         <Catalog/>
         <GlobalStyle/>

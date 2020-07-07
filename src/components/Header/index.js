@@ -3,13 +3,13 @@ import React from 'react';
 import * as S from './styled';
 import Cart from '../Cart';
 
-export default function Menu() {
+export default function Header() {
   return (
-    <S.MenuContainer>
+    <S.HeaderContainer>
       <S.StoreTitle href="/store">
         PokeStore
       </S.StoreTitle>
       <Cart/>
-    </S.MenuContainer>
+    </S.HeaderContainer>
   );
 }
