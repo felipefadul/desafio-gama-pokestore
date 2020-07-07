@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+
 import * as S from './styled';
 
 export default function Product({ item }) {
@@ -7,7 +10,10 @@ export default function Product({ item }) {
       <S.Image src={ item.image } alt={ item.name } />
       <S.Title>{ item.name }</S.Title>
       <S.Price>R$ { item.price },00</S.Price>
-      <S.Button>ADICIONAR AO CARRINHO</S.Button>
+      <S.Button>
+        <FontAwesomeIcon icon={ faCartPlus } />
+        &nbsp;ADICIONAR
+      </S.Button>
     </S.CardContainer>
   );
 };
