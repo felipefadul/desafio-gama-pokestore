@@ -4,6 +4,7 @@ import * as S from './styled';
 import GlobalStyle from '../../styles/global';
 import Catalog from '../../components/Catalog';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function Store() {
   
@@ -14,6 +15,7 @@ export default function Store() {
         <Catalog/>
         <GlobalStyle/>
       </S.StoreContainer>
+      <Footer/>
     </>
   );
 }
