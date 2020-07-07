@@ -12,6 +12,7 @@ export const CardContainer = styled.div`
   border: 2px solid;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
   transition: transform .2s;
+  font-family: 'Montserrat', sans-serif;
 
   &:hover {
     transform: scale(1.05);
