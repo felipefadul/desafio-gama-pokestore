@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
   width: 100%;
@@ -17,7 +18,7 @@ export const HeaderContainer = styled.div`
     height: 100px;
   }
 `
-export const StoreTitle = styled.a`
+export const StoreTitle = styled(Link)`
   font-family: 'Acme', sans-serif;
   font-size: 4rem;
   text-decoration: none;
