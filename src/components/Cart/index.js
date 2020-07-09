@@ -25,24 +25,34 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Cart({ cart, clearCart }) {
   const classes = useStyles();
-  const [ open, setOpen ] = React.useState(false);
+  const [ openCartModal, setOpenCartModal ] = React.useState(false);
+  const [ openThanksModal, setOpenThanksModal ] = React.useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
+  const handleOpenCartModal = () => {
+    setOpenCartModal(true);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseCartModal = () => {
+    setOpenCartModal(false);
   };
+
+  const handleOpenThanksModal = () => {
+    setOpenThanksModal(true);
+  }
+
+  const handleCloseThanksModal = () => {
+    setOpenThanksModal(false);
+  }
 
   const finishPurchase = () => {
-    handleClose();
+    handleCloseCartModal();
+    handleOpenThanksModal();
     clearCart();
   };
 
   return (
     <>
-      <S.CartHeaderSection onClick={handleOpen}>
+      <S.CartHeaderSection onClick={handleOpenCartModal}>
         <S.CartHeaderText>
           <FontAwesomeIcon icon={faShoppingCart} />
           &nbsp;CARRINHO
@@ -58,17 +68,17 @@ export default function Cart({ cart, clearCart }) {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open={open}
-        onClose={handleClose}
+        open={openCartModal}
+        onClose={handleCloseCartModal}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={open}>
+        <Fade in={openCartModal}>
           <div className={classes.paper}>
-            <S.CartModalTitle>Meu Carrinho</S.CartModalTitle>
+            <S.ModalTitle>Meu Carrinho</S.ModalTitle>
             <S.CartContainer>
               {cart.length > 0 ? (
                 cart.map((item, index) => (
@@ -100,11 +110,35 @@ export default function Cart({ cart, clearCart }) {
                   </S.ModalButton>
                 </>
               ) : (
-                <S.ModalButton onClick={handleClose}>
+                <S.ModalButton onClick={handleCloseCartModal}>
                   ESCOLHER PRODUTOS
                 </S.ModalButton>
               )
             }
+          </div>
+        </Fade>
+      </Modal>
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={classes.modal}
+        open={openThanksModal}
+        onClose={handleCloseThanksModal}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={openThanksModal}>
+          <div className={classes.paper}>
+            <S.ModalTitle>Compra finalizada!</S.ModalTitle>
+            <S.CenterText>
+              Obrigado pela preferência! :)
+            </S.CenterText>
+            <S.ModalButton onClick={handleCloseThanksModal}>
+              VOLTAR ÀS COMPRAS
+            </S.ModalButton>
           </div>
         </Fade>
       </Modal>

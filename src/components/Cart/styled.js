@@ -21,7 +21,7 @@ export const CartHeaderText = styled.span`
   display: flex;
 `
 
-export const CartModalTitle = styled.h1`
+export const ModalTitle = styled.h1`
   margin-bottom: 10px;
   color: #EA4F23;
   font-weight: bold;
