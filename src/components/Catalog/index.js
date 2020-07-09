@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import * as S from './styled';
 import Product from '../../components/Product';
 
-export default function Store() {
+export default function Catalog({ addToCart }) {
   const [ products, setProducts ] = useState([]);
   
   useEffect(() => {
@@ -19,8 +19,9 @@ export default function Store() {
           { 
             products.map(item => (
             <Product 
-              key={item.id}
-              item={item} />
+              key={ item.id }
+              item={ item } 
+              addToCart={ addToCart } />
             ))
           }
       </S.ProductsContainer>

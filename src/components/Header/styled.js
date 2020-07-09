@@ -15,7 +15,7 @@ export const HeaderContainer = styled.div`
   @media(max-width: 800px) {
     flex-direction: column;
     justify-content: center;
-    height: 100px;
+    height: 125px;
   }
 `
 export const StoreTitle = styled(Link)`
