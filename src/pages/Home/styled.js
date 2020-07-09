@@ -44,6 +44,11 @@ export const Button = styled.button`
   font-size: 1.5rem;
   color: #fff;
   border-radius: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #d23d14;
+  }
 
   @media(max-width: 800px) {
     height: 3rem;
