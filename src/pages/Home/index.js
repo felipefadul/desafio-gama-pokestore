@@ -23,7 +23,7 @@ export default function Home() {
             id,
             ...item,
             price: item.name.length * 25,
-            image: `https://pokeres.bastionbot.org/images/pokemon/${id}.png`
+            image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{id}.png`
           }
         }));
         localStorage.setItem('catalog', JSON.stringify(catalog));
